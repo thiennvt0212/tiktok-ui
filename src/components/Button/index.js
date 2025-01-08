@@ -18,6 +18,7 @@ function Button({
   rounded = false,
   iconLeft = false,
   iconRight = false,
+  className 
 }) {
   let Comp = "button";
   const props = [onClick];
@@ -37,7 +38,7 @@ function Button({
     props.href = href;
   }
 
-  const classes = cx("wrapper", {
+  const classes = cx("wrapper", className, {
     primary,
     outline,
     small,
