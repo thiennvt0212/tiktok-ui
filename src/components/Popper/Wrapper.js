@@ -5,8 +5,6 @@ const cx = classNames.bind(styles);
 
 function Wrapper({children, className}) {
     
-    console.log("className "+ className);
-    
     return ( 
         <div className={cx('wrapper', className)}>
             {children}

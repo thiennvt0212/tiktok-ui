@@ -6,7 +6,6 @@ const cx = classNames.bind(styles);
 
 function Button({
   to,
-  onClick,
   href,
   children,
   primary = false,
@@ -18,10 +17,15 @@ function Button({
   rounded = false,
   iconLeft = false,
   iconRight = false,
-  className 
+  className,
+  onClick,
+  ...passProps 
 }) {
   let Comp = "button";
-  const props = [onClick];
+  const props = {
+    onClick,
+    ...passProps,
+  };
 
   // if(disabled){
   //   Object.keys(props).forEach(key => {
@@ -39,6 +43,7 @@ function Button({
   }
 
   const classes = cx("wrapper", className, {
+    [className] : className,
     primary,
     outline,
     small,

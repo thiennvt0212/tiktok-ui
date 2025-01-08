@@ -12,7 +12,7 @@ import {
   faKeyboard,
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react/headless";
-import { useEffect, useState } from "react";
+import { Children, useEffect, useState } from "react";
 
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
@@ -28,18 +28,30 @@ function Header() {
 
   const MENU_ITEMS = [
     {
-      title : 'English',
+      title: "English",
       icon: <FontAwesomeIcon icon={faEarthAsia} />,
+      children: [
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Việt nam",
+        },
+      ],
     },
     {
-      title : 'Feedback and help',
-      icon:  <FontAwesomeIcon icon={faCircleQuestion} />,
-      to: '/feedback',
+      title: "Feedback and help",
+      icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+      to: "/feedback",
     },
     {
-      title : 'Keyboard',
+      title: "Keyboard",
       icon: <FontAwesomeIcon icon={faKeyboard} />,
-    }
+    },
   ];
 
   useEffect(() => {
@@ -47,6 +59,11 @@ function Header() {
       setResult([]);
     }, 0);
   }, []);
+
+  const handleMenuOnchange = (menuItem)=>{
+    console.log(menuItem);
+    
+  };
 
   return (
     <header className={cx("wrapper")}>
@@ -85,7 +102,7 @@ function Header() {
         <div className={cx("action")}>
           <Button text>Upload</Button>
           <Button primary>Log in</Button>
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuOnchange}>
             <button className={cx("menu-btn")}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>
