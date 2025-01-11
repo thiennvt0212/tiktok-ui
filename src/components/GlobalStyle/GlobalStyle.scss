@@ -1,5 +1,4 @@
 @import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,300;1,400&display=swap");
 
 :root {
     --primary-color: #fe2c55; 
@@ -24,7 +23,7 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "TiktokFont", sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -33,6 +32,32 @@ button, input, [tabindex]{
   outline: none;
   border: none;
   
+}
+
+// font emmbeded
+
+@font-face {
+  font-family: 'TiktokDisplayFont';
+  src: url('../../assets/fontStyle/TikTokDisplayFont-Bold.woff2') format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "TiktokFont";
+  src: url('../../assets/fontStyle/TikTokFont-Bold.woff2') format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "TiktokFont";
+  src: url('../../assets/fontStyle/TikTokFont-Regular.woff2') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TiktokFont";
+  src: url('../../assets/fontStyle/TikTokFont-Semibold.woff2') format('opentype');
+  font-weight: 600;
 }
 
 a[href]{

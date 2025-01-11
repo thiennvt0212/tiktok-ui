@@ -26,6 +26,8 @@ import { Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu";
+import { MessageIcon, NotificationIcon, SearchIcon, UploadIcon } from "~/components/Icons";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 
@@ -126,7 +128,7 @@ function Header() {
             </button>
             <FontAwesomeIcon className={cx("spinner")} icon={faSpinner} />
             <button className={cx("search-btn")}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <SearchIcon/>
             </button>
           </div>
         </HeadlessTippy>
@@ -134,9 +136,20 @@ function Header() {
         <div className={cx("action")}>
           {currentUser ? (
             <>
-              <Tippy content="upload video" placement="bottom">
-                <button className={cx("upload-btn")}>
-                  <FontAwesomeIcon icon={faCloudArrowUp} />
+              <Tippy delay={[0, 50]} content="upload video" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <UploadIcon/>
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 50]} content="message" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <MessageIcon/>
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 50]} content="Notification" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <NotificationIcon/>
+                  <span className={cx('badge')}>12</span>
                 </button>
               </Tippy>
             </>
@@ -149,10 +162,11 @@ function Header() {
 
           <Menu items={currentUser ? userMenu :  MENU_ITEMS} onChange={handleMenuOnchange}>
             {currentUser ? (
-              <img
+              <Image
                 className={cx("user-avatar")}
                 src="https://p9-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/a2d2c37ba7952fef60229d0354a02046.jpeg?lk3s=a5d48078&nonce=78801&refresh_token=9114b02c64d633858797cb60ea051dff&x-expires=1736190000&x-signature=%2FU27H0zVGpujjOw%2Fh3tflKfm63E%3D&shp=a5d48078&shcp=81f88b70"
                 alt="trang"
+                fallback="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
               />
             ) : (
               <button className={cx("menu-btn")}>
