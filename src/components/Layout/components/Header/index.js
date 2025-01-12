@@ -1,39 +1,30 @@
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCircleXmark,
-  faSpinner,
-  faMagnifyingGlass,
   faEllipsisVertical,
   faEarthAsia,
   faCircleQuestion,
   faKeyboard,
-  faCloudArrowUp,
   faUser,
   faCoins,
   faGear,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
-import HeadlessTippy from "@tippyjs/react/headless";
 import Tippy from "@tippyjs/react";
-import { Children, useEffect, useState } from "react";
 import "tippy.js/dist/tippy.css";
-
 import "~/components/GlobalStyle";
+
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
-import { Wrapper as PopperWrapper } from "~/components/Popper";
-import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu";
-import { MessageIcon, NotificationIcon, SearchIcon, UploadIcon } from "~/components/Icons";
+import { MessageIcon, NotificationIcon, UploadIcon } from "~/components/Icons";
 import Image from "~/components/Image";
+import Search from "../Search";
 
 const cx = classNames.bind(styles);
 
 function Header() {
-  const [result, setResult] = useState([]);
-
   const currentUser = true;
 
   const MENU_ITEMS = [
@@ -64,12 +55,6 @@ function Header() {
     },
   ];
 
-  useEffect(() => {
-    setTimeout(() => {
-      setResult([]);
-    }, 0);
-  }, []);
-
   const handleMenuOnchange = (menuItem) => {
     console.log(menuItem);
   };
@@ -95,9 +80,9 @@ function Header() {
       title: "Log out",
       icon: <FontAwesomeIcon icon={faSignOut} />,
       to: "/signOut",
-      separate : true,
+      separate: true,
     },
-  ]
+  ];
 
   return (
     <header className={cx("wrapper")}>
@@ -105,51 +90,26 @@ function Header() {
         <div className={cx("logo")}>
           <img src={images.logo} alt="logo" />
         </div>
-        <HeadlessTippy
-          interactive
-          visible={result.length > 0}
-          appendTo="parent"
-          render={(attrs) => (
-            <div className={cx("search-result")} tabIndex="-1" {...attrs}>
-              <PopperWrapper>
-                <h4 className={cx("search-title")}>Accounts</h4>
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
-              </PopperWrapper>
-            </div>
-          )}
-        >
-          <div className={cx("search")}>
-            <input placeholder="Search account and videos" spellCheck={false} />
-            <button className={cx("clear")}>
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </button>
-            <FontAwesomeIcon className={cx("spinner")} icon={faSpinner} />
-            <button className={cx("search-btn")}>
-              <SearchIcon/>
-            </button>
-          </div>
-        </HeadlessTippy>
+
+        <Search />
 
         <div className={cx("action")}>
           {currentUser ? (
             <>
               <Tippy delay={[0, 50]} content="upload video" placement="bottom">
                 <button className={cx("action-btn")}>
-                  <UploadIcon/>
+                  <UploadIcon />
                 </button>
               </Tippy>
               <Tippy delay={[0, 50]} content="message" placement="bottom">
                 <button className={cx("action-btn")}>
-                  <MessageIcon/>
+                  <MessageIcon />
                 </button>
               </Tippy>
               <Tippy delay={[0, 50]} content="Notification" placement="bottom">
                 <button className={cx("action-btn")}>
-                  <NotificationIcon/>
-                  <span className={cx('badge')}>12</span>
+                  <NotificationIcon />
+                  <span className={cx("badge")}>12</span>
                 </button>
               </Tippy>
             </>
@@ -160,7 +120,10 @@ function Header() {
             </>
           )}
 
-          <Menu items={currentUser ? userMenu :  MENU_ITEMS} onChange={handleMenuOnchange}>
+          <Menu
+            items={currentUser ? userMenu : MENU_ITEMS}
+            onChange={handleMenuOnchange}
+          >
             {currentUser ? (
               <Image
                 className={cx("user-avatar")}
