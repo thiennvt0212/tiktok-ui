@@ -20,6 +20,7 @@
     height: 100%;
     background-color: transparent;
     caret-color: var(--primary-color);
+    font-family: var(--font-tiktok);
   }
 
   input:not(:placeholder-shown) ~ .search-btn {

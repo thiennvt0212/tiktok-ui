@@ -46,6 +46,7 @@ function Menu({ children, items = [] , onChange = defaultFuntion}) {
       interactive
       placement="bottom-end"
       delay={[0, 700]}
+      hideOnClick = {false}
       offset={[12, 8]}
       // visible
       appendTo="parent"

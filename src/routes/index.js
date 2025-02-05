@@ -5,12 +5,13 @@ import Following from "~/pages/Following";
 import Profile from "~/pages/Profile";
 import Upload from "~/pages/Upload";
 import Search from "~/pages/Search";
+import routes from '~/Config/routes';
 
 export const publicRotes = [
-  { path: "/", component: Home },
-  { path: "/following", component: Following },
-  { path: '/:nickname', component: Profile },
-  { path: "/upload", component: Upload, layoutPage: OnlyHeader },
-  { path: "/search", component: Search, layoutPage: null },
+  { path: routes.home, component: Home },
+  { path: routes.following, component: Following },
+  { path: routes.profile, component: Profile },
+  { path: routes.upload, component: Upload, layoutPage: OnlyHeader },
+  { path: routes.search, component: Search, layoutPage: null },
 ];
 export const privateRotes = [];
