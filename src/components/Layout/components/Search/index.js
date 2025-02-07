@@ -54,7 +54,6 @@ function Search() {
     const fechApi = async () => {
       setLoading(true);
       const result = await searchServices.search(debounced);
-      console.log(result);
       setSearchResult(result);
       setLoading(false);
     };

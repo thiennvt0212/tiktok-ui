@@ -42,7 +42,117 @@ function Header() {
         {
           type: "Languages",
           code: "vi",
-          title: "Việt nam",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "Languages",
+          code: "en",
+          title: "English",
+        },
+        {
+          type: "Languages",
+          code: "vi",
+          title: "Tiếng Việt",
         },
       ],
     },

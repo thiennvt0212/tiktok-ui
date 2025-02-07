@@ -48,7 +48,6 @@ function Menu({ children, items = [] , onChange = defaultFuntion}) {
       delay={[0, 700]}
       hideOnClick = {false}
       offset={[12, 8]}
-      // visible
       appendTo="parent"
       render={(attrs) => (
         <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
@@ -61,7 +60,7 @@ function Menu({ children, items = [] , onChange = defaultFuntion}) {
                 }}
               />
             )}
-            {renderItems()}
+            <div className={cx("menu-body")}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}
