@@ -15,7 +15,7 @@ import "tippy.js/dist/tippy.css";
 import "~/components/GlobalStyle";
 
 import styles from "./Header.module.scss";
-import routes from '~/Config/routes';
+import config from '~/Config';
 import images from "~/assets/images";
 import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu";
@@ -200,7 +200,7 @@ function Header() {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         {/* <div className={cx("logo")}> */}
-          <Link to={routes.home} className={cx("logo-link")}>
+          <Link to={config.routes.home} className={cx("logo-link")}>
             <img src={images.logo} alt="logo" />
           </Link>
         {/* </div> */}

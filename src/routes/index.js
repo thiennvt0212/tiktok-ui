@@ -5,13 +5,13 @@ import Following from "~/pages/Following";
 import Profile from "~/pages/Profile";
 import Upload from "~/pages/Upload";
 import Search from "~/pages/Search";
-import routes from '~/Config/routes';
+import config from '~/Config';
 
 export const publicRotes = [
-  { path: routes.home, component: Home },
-  { path: routes.following, component: Following },
-  { path: routes.profile, component: Profile },
-  { path: routes.upload, component: Upload, layoutPage: OnlyHeader },
-  { path: routes.search, component: Search, layoutPage: null },
+  { path: config.routes.home, component: Home },
+  { path: config.routes.following, component: Following },
+  { path: config.routes.profile, component: Profile },
+  { path: config.routes.upload, component: Upload, layoutPage: OnlyHeader },
+  { path: config.routes.search, component: Search, layoutPage: null },
 ];
 export const privateRotes = [];
